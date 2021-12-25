@@ -1,0 +1,9 @@
+jobs:
+  automate-projects:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to TOP SECRET project board
+        run: gh issue edit $ISSUE_NUM --add-project "Secret Project Name"
+        env:
+          ISSUE_NUM: https://github.com/orgs/HyperGaming-Network/projects/1/
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
